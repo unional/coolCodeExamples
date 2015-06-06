@@ -1,60 +1,13 @@
-
-export class BladeMaterial {
-	constructor(public name: string) {
-	}
-}
-
-export class CompositMaterial extends BladeMaterial {
-	constructor(public name: string) {
-		super(name);
-	}
-}
-
-export class Wood extends BladeMaterial {
-	stiffness: number
-	hardness: number
-	constructor(
-		public name: string,
-		public janka: number | [number, number],
-		public specificGravity: number | [number, number],
-		public poundPerCubic: number| [number, number]
-		)
-	{
-		super(name);
-	}
-
-	/**
-	 * Create a specific instane of this type of material. 
-	 */
-	createInstance() {
-		var result = new Wood(
-			this.name,
-			typeof this.janka !== "number"? getRandom(<[number, number]>this.janka): this.janka,
-			typeof this.specificGravity !== "number"? getRandom(<[number, number]>this.specificGravity): this.specificGravity,
-			typeof this.poundPerCubic !== "number"? getRandom(<[number, number]>this.poundPerCubic): this.poundPerCubic
-		);
-		
-		result.hardness = <number>result.janka / 10;
-		result.stiffness = <number>result.specificGravity * 100;
-		
-		return result;
-		
-		function getRandom(tuple: [number, number]) {
-			return tuple[0] + Math.random()*(tuple[1] - tuple[0]);
-		}
-	}	
-	private calculateHardness() {
-		
-	}
-	
-}
+import BladeMaterial from "BladeMaterial";
+import Wood from "BladeWoodMaterial";
+import Composite from "BladeCompositeMaterial";
 
 export var Materials = {
-	Carbon: new CompositMaterial("Carbon"),
-	Zylon: new CompositMaterial("Zylon"),
-	Kevlar: new CompositMaterial("Kevlar"),
-	Aralyte: new CompositMaterial("Aralyte"),
-	Fiberglass: new CompositMaterial("Fiberglass"),
+	Carbon: new Composite("Carbon"),
+	Zylon: new Composite("Zylon"),
+	Kevlar: new Composite("Kevlar"),
+	Aralyte: new Composite("Aralyte"),
+	Fiberglass: new Composite("Fiberglass"),
 	register: function(material: BladeMaterial) {
 		Materials[material.name] = material;
 	},
