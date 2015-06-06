@@ -1,4 +1,4 @@
-# exampleClasses
+# Cool code examples
 Home of simple to complex examples in different languages, frameworks, and libraries.
 
 When I learn a new language, framework, or library, the examples their respective official site are often a good place to start but often fall short if I want to learn more. So I ended up with googling the web just to hunt down bits and pieces, and often it takes a long time.
