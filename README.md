@@ -8,18 +8,15 @@ This repository is created to solve that problem in mind.  If you have something
 # Folder structures
 ```
 .
-+-- <languages>
-	+-- Language  // Pure langauge examples
-		+-- <Example>
-			+--	README.md
-			+-- <ExampleFoldersOrFiles>
-	+-- <frameworksOrLibraries> // Examples for specific framework or library
-		+-- <Example>
-			+-- README.md
-			+-- <ExampleFoldersOrFiles>
-	+-- Complex // Examples that uses multple frameworks or libraries
-		+-- <Example>
-			+-- README.md
-			+-- <ExampleFoldersOrFiles>
-+-- README.template.md // Use this to create the README.md for each exmaple.	
++-- <language>_<framework(s) or librar(ies)>
+	+-- <Example>
+		+--	README.md
+		+-- <ExampleFoldersOrFiles>
++-- README.template.md // Use this to create the README.md for each example.	
 ```
+
+Use the full name of the languages, frameworks, and libraries when naming the folders.  Users should able to understand the names at first glance.  These naming can also help SEO so that search engines can point users here. For example:
+
+* `TypeScript` and `JavaScript` instead of `ts` and `js`
+* `AngularJS` and `KnockoutJS` instead of 'ng' and 'ko'
+* `jQuery`, `underscore`, and `lodash` instead of `$` and ...
