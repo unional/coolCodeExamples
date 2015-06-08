@@ -1,6 +1,6 @@
 import BladeMaterial from "BladeMaterial";
 
-export default class BaldeWoodMaterial extends BladeMaterial {
+export default class BladeWoodMaterial extends BladeMaterial {
 	constructor(
 		public name: string,
 		public janka: number | [number, number],
@@ -15,7 +15,7 @@ export default class BaldeWoodMaterial extends BladeMaterial {
 	 * Create a specific instane of this type of material. 
 	 */
 	createInstance() {
-		var result = new BaldeWoodMaterial(
+		var result = new BladeWoodMaterial(
 			this.name,
 			typeof this.janka !== "number"? getRandom(<[number, number]>this.janka): this.janka,
 			typeof this.specificGravity !== "number"? getRandom(<[number, number]>this.specificGravity): this.specificGravity,

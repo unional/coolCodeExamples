@@ -1,17 +1,7 @@
 import * as Materials from 'BladeMaterials';
 
-export enum Type {
-	Shakehand,
-	Penhold,
-	Tenaly
-}
 
-export enum Handle {
-	Penhold,
-	Straight,
-	Flare,
-	Anatomic
-}
+
 
 export enum Plys {
 	Five = 5,

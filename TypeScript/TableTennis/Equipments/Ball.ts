@@ -1,4 +1,4 @@
-// Demo named export feature
+// Demo getter and setter
 
 import Sizes from "BallSize"
 import BallSpecifications from "BallSpecifications"
