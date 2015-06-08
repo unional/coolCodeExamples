@@ -1,7 +1,7 @@
 
-import BladeMaterialSpec from "Equipments/Specifications/BladeMaterialSpec"
-import BladeType from "Equipments/BladeType"
-import BladeHandle from "Equipments/BladeHandle"
+import BladeMaterialSpec from "equipments/specifications/BladeMaterialSpec"
+import BladeType from "equipments/BladeType"
+import BladeHandle from "equipments/BladeHandle"
 
 /**
  * Design of a blade
