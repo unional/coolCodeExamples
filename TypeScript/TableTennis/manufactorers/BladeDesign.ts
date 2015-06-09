@@ -8,7 +8,7 @@ import BladeHandle from "equipments/BladeHandle"
  */
  export default class BladeDesign {
 	 name: string
-	 piles: Array<[BladeMaterialSpec, number]>
+	 piles: Array<[string, number]>
 	 type: BladeType
 	 handle: BladeHandle
 	 width: number

@@ -33,11 +33,11 @@ export default class BatchOfBalls {
 	
 	private manifestBall(quantity: number): Ball[] {
 		var result = [];
-		while(quantity--) {
-			let ball = new Ball(this.ballSize);
-			// TODO: create ball info.
-			result.push(ball);
-		}
+		// while(quantity--) {
+		// 	let ball = new Ball(this.ballSize);
+		// 	// TODO: create ball info.
+		// 	result.push(ball);
+		// }
 		
 		return result;
 	}

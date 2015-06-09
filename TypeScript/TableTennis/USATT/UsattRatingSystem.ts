@@ -1,4 +1,4 @@
-import IUsattRegistrant from 'IUsattRegistrant'
+import IUsattRegistrant from 'UsattRegistrant'
 
 export default class UsattRatingSystem {
 	private static instance: UsattRatingSystem = new UsattRatingSystem();
@@ -33,25 +33,25 @@ export default class UsattRatingSystem {
 		// TODO: Calculate new ratings.
 	}
 	
-	public findPlayers(playerName?: string, playerId?: number): IUsattPlayer[] {
-		var result: IUsattPlayer[];
-		if (playerId) {
-			let player = this.players[playerId];
-			if (!playerName || player.name === playerName) {
-				result.push(player);
-			}
-		}
-		else if (playerName) {
-			for (let player of this.players) {
-				if (player.name === playerName) {
-					result.push(player);
-				}
-			}
-		}
-		else {
-			throw new Error("Can't list all players");
-		}
+	// public findPlayers(playerName?: string, playerId?: number): IUsattPlayer[] {
+	// 	var result: IUsattPlayer[];
+	// 	if (playerId) {
+	// 		let player = this.players[playerId];
+	// 		if (!playerName || player.name === playerName) {
+	// 			result.push(player);
+	// 		}
+	// 	}
+	// 	else if (playerName) {
+	// 		for (let player of this.players) {
+	// 			if (player.name === playerName) {
+	// 				result.push(player);
+	// 			}
+	// 		}
+	// 	}
+	// 	else {
+	// 		throw new Error("Can't list all players");
+	// 	}
 		
-		return result;
-	}
+	// 	return result;
+	// }
 }

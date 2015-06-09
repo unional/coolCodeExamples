@@ -2,7 +2,7 @@ import BladeMaterial from "BladeMaterial";
 import Wood from "BladeWoodMaterial";
 import Composite from "BladeCompositeMaterial";
 
-export var Materials = {
+var Materials = {
 	Carbon: new Composite("Carbon"),
 	Zylon: new Composite("Zylon"),
 	Kevlar: new Composite("Kevlar"),
@@ -15,6 +15,8 @@ export var Materials = {
 		delete Materials[material.name];
 	}
 };
+
+export default Materials
 
 Materials.register(new Wood("Anigre", 740, .40, [30, 34]));
 Materials.register(new Wood("Ash", 1320, .66, 42));

@@ -1,4 +1,5 @@
-import BatchOfBalls from "Equipments/BatchOfBalls"
+import BatchOfBalls from "equipments/BatchOfBalls"
+import BallSize from "equipments/BallSize"
 
 export default class BallManufactoringMachine {
 	errorMargin: number

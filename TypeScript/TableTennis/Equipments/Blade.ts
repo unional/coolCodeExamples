@@ -1,25 +1,22 @@
-import * as Materials from 'BladeMaterials';
-
-
-
-
-export enum Plys {
-	Five = 5,
-	Seven = 7
-}
+import BladeMaterials from 'BladeMaterials'
+import BladeType from "BladeType"
+import BladeHandle from "BladeHandle"
+import BladeMaterial from "BladeMaterial"
 
 export default class Blade {
+	type: BladeType
+	handle: BladeHandle
 	thickness: number
 	weight: number
 	width: number
 	tall: number
 	stiffness: number
 	hardness: number
-	piles: Materials.BladeMaterial[]
-	constructor(public type: Type | string, public handle: Handle | string) {
+	piles: [BladeMaterial, number][]
+	constructor(options: any) {
+		// Would be great when Object.assign is available.
 		
 	}
-	
 	get control(): number {
 		// TODO: calculate the control of the blade
 		return 0;

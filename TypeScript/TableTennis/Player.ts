@@ -17,7 +17,7 @@ export default class Player {
 		
 		this.budget -= amount;
 	}
-	startShopping(store: Store) {
-		return store.createShoppingCart(this);
-	}
+	// startShopping(store: Store) {
+	// 	return store.createShoppingCart(this);
+	// }
 }

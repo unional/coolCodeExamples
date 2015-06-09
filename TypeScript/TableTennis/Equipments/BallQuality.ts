@@ -1,4 +1,6 @@
 
-export default var BallQuality = {
+var BallQuality = {
 	
 }
+
+export default BallQuality

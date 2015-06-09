@@ -1,43 +1,31 @@
 import BladeDesign from "BladeDesign"
-import Inventory from "common/Inventory"
-import Logger from "common/Logger"
+import Blade from "equipments/Blade"
+import InventoryConsumer from "common/InventoryConsumer"
+import BladeMaterial from "equipments/BladeMaterial"
 /**
  * This is a simplified machine that creates blades.
  */
- export default class BladeManufactoringMachine {
-	 logger: Logger
-	 inventory: Inventory
+ export default class BladeManufactoringMachine extends InventoryConsumer {
 	 createBlades(design: BladeDesign, quantity: number): boolean {
-		 var success =this.pullInventory(design, quantity); 
-		 if (success) {
-			 // create blades and put into inventory.
+		 var materials: any;
+		 var itemsToPull = design.piles.map(p => <[string, number]>[p[0], p[1] * quantity]);
+		 materials = super.pullInventory(itemsToPull);
+		 if (materials) {
+			var blade = new Blade({
+				type: design.type,
+				handle: design.handle,
+				name: design.name,
+				width: design.width,
+				tall: design.tall,
+				handleWidth: design.handleWidth,
+				handleTall: design.handleTall				
+			});
+			for (let pileSpec of design.piles) {
+				let material = <BladeMaterial[]>materials[pileSpec[0]];
+				
+			}
 		 }
 		 
-		 return success;
-	 }
-	 
-	 private hasEnoughInventory(design: BladeDesign, quantity: number) {
-		 var result = true;
-		 for (let pileSpec of design.piles) {
-			 let total = this.inventory.getTotal(pileSpec[0].name);
-			 let needed = pileSpec[1] * quantity;
-			 if (total < needed) {
-				 result = false;
-				this.logger.log(`Inventory does not have enough ${pileSpec[0].name}. Has ${total}, asking: ${needed}`); 
-			 }
-		 }
-		 
-		 return result;
-	 }
-	 
-	 private pullInventory(design: BladeDesign, quantity: number): boolean {
-		 var result = this.hasEnoughInventory(design, quantity);
-		 if (result)  {
-			 for (let pileSpec of design.piles) {
-				let needed = pileSpec[1] * quantity;
-				this.inventory.pull(pileSpec[0].name, needed);
-			 }		 			 
-		 }
-		 return result;
+		 return materials !== undefined;
 	 }
  }

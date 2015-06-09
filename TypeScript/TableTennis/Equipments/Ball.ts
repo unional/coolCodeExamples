@@ -13,25 +13,25 @@ export default class Ball {
 	 * How many points a ball can last.
 	 */
 	public durability;
-	constructor(public size: Sizes) {}
+	// constructor(public size: Sizes) {}
 	
-	get rating() {
-		return this.rating;
-	}
-	set rating(rating: Ratings) {
-		if (rating === Ratings.ThreeStars) {
-			var spec = BallSpecifications[this.size];
-			if (!spec.comply(this)) {
-				this.rating = Ratings.NoStar;	
-			}
-			else {
-				this.rating = rating;
-			}			
-		}
-		else {
-			this.rating = rating;
-		}
+	// get rating() {
+	// 	return this.rating;
+	// }
+	// set rating(rating: Ratings) {
+	// 	if (rating === Ratings.ThreeStars) {
+	// 		var spec = BallSpecifications[this.size];
+	// 		if (!spec.comply(this)) {
+	// 			this.rating = Ratings.NoStar;	
+	// 		}
+	// 		else {
+	// 			this.rating = rating;
+	// 		}			
+	// 	}
+	// 	else {
+	// 		this.rating = rating;
+	// 	}
 		
 		
-	}
+	// }
 }

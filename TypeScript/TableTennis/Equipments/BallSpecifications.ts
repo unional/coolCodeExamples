@@ -3,11 +3,11 @@ export enum BallType {
 	FourtyPlusWithSeam,
 	FourtyPlusSeamless
 }
-export interface IBallSpec {
-	comply(ball: IBall): boolean
+export interface BallSpec {
+	comply(ball: any): boolean
 }
-export default var BallSpecifications = {
-	getSpec(type: BallType): IBallSpec {
+var BallSpecifications = {
+	getSpec(type: BallType): BallSpec {
 		var result;
 		switch (type) {
 			case BallType.Fourty:
@@ -26,9 +26,11 @@ export default var BallSpecifications = {
 	}
 }
 
+export default BallSpecifications
+
 // SeamBallSpecification and SeamlessBallSpecification class are not exported. No need to be.
 
-class SeamBallSpecification implements IBallSpec {
+class SeamBallSpecification implements BallSpec {
 	constructor(
 		/**
 		 * Diameter of the ball  in cm: Lower limit - target - upper Limit
@@ -53,12 +55,12 @@ class SeamBallSpecification implements IBallSpec {
 		public seamHardness: [number, number]
 		){}
 		
-		comply(ball: IBall): boolean {
+		comply(ball: any): boolean {
 			return false;
 		}
 }
 
-class SeamlessBallSpecification implements IBallSpec {
+class SeamlessBallSpecification implements BallSpec {
 	constructor(
 		/**
 		 * Diameter of the ball  in cm: Lower limit - target - upper Limit
@@ -79,7 +81,7 @@ class SeamlessBallSpecification implements IBallSpec {
 		public hardness: [number, number]
 		){}
 		
-		comply(ball: IBall): boolean {
+		comply(ball: any): boolean {
 			return false;
 		}
 }
